@@ -1,0 +1,13 @@
+The CSS code has an unexpected behavior when a pseudo-element (::before or ::after) is used with a content property that refers to a variable containing a string with special characters like quotes or backslashes. The rendering differs from what is expected. For example: 
+
+```css
+:root {
+  --my-string: "This is a string with \"quotes\"";
+}
+
+p { 
+  ::before {
+    content: var(--my-string);
+  }
+}
+```
