@@ -1,0 +1,15 @@
+To solve this issue, you should escape special characters within the CSS variable or use a different method for managing strings with special characters. One approach is to use CSS escape sequences for special characters like quotes and backslashes. For example:
+
+```css
+:root {
+  --my-string: "This is a string with \"quotes\" and \\backslashes\";
+}
+
+p { 
+  ::before {
+    content: var(--my-string);
+  }
+}
+```
+
+Alternatively, use a different approach to manage strings, such as creating separate strings for different parts of the text, then concatenating them within the content property.
